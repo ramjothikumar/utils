@@ -113,6 +113,7 @@ def test_calculator():
     assert(main(calculation='22/7.0') == 3.14)
     assert(main(calculation='22/7.0', roundoff=5) == 3.14286)
 
+
 if __name__ == '__main__':
     logging.basicConfig(stream=sys.stdout, level=logging.INFO,
                         format='%(asctime)s: %(message)s')
