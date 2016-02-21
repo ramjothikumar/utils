@@ -1,0 +1,6 @@
+before_install:
+  - sudo pip install --upgrade pip
+  - sudo pip install pytest flake8
+script:
+  - sudo flake8 utils/*.py
+  - sudo py.test utils/*.py
