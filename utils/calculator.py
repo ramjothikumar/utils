@@ -28,11 +28,16 @@ def div(x, y):
     return float(x) / float(y)
 
 
+def power(x, y):
+    return float(x) ** float(y)
+
+
 OPERATOR_MAP = {
     '+': add,
     '-': sub,
     '*': mul,
     '/': div,
+    '^': power,
 }
 
 
@@ -44,6 +49,10 @@ def validate_calculation(calculation):
     if not re.match(r'[0-9]', calculation[-1]):
         logging.error("Last entry in the input string '%s' is not a Number."
                       % calculation[-1])
+        sys.exit(-1)
+    if '(' in calculation or ')' in calculation:
+        logging.error("Bracket functionality '()' not supported yet - %s."
+                      % calculation)
         sys.exit(-1)
 
 
